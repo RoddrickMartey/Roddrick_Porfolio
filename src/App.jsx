@@ -11,6 +11,7 @@ import AdminUpdateUserDetails from "./pages/Auth/AdminUpdateUserDetails";
 import NotFound from "./pages/NotFound";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import ProjectPage from "./pages/ProjectPage";
 
 function App() {
   return (
@@ -21,12 +22,16 @@ function App() {
         <Route path="/admin/edit/password" element={<AdminUpdatePassword />} />
         <Route path="/admin/projects" element={<AdminDisplayProjects />} />
         <Route path="/admin/add-project" element={<AdminAddProject />} />
-        <Route path="/admin/edit-project" element={<AdminEditProject />} />
+        <Route
+          path="/admin/edit-project/:slug"
+          element={<AdminEditProject />}
+        />
       </Route>
       <Route element={<PublicLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/projects" element={<ProjectPage />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

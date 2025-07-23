@@ -13,7 +13,8 @@ export default function PublicLayout() {
 
   if (isError) {
     const msg =
-      error?.response?.data?.message || "Failed to load user details.";
+      error?.response?.data?.message ||
+      "Failed to load . Check internet conection or Reload";
     return <Error message={msg} />;
   }
   return (
