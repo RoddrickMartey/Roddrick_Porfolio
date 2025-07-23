@@ -93,19 +93,12 @@ export default function ProjectEditSaveFooter({
       // Validate
       const checked = validateProjectForm(payload);
       if (!checked.ok) {
-        console.group("Project validation errors");
-        console.error(checked.errors);
-        console.groupEnd();
         const errs = checked.errors.map((er) => er.msg).join("\n");
         toast.error("Validation failed", {
           description: errs || "Check required fields.",
         });
         return;
       }
-
-      console.group("Validated project payload (update)");
-      console.log(checked.data);
-      console.groupEnd();
 
       try {
         setLoading(true);
@@ -122,7 +115,6 @@ export default function ProjectEditSaveFooter({
           navigate(onSuccessNavigate); // e.g., "/admin/projects"
         }
       } catch (err) {
-        console.error("Update project error:", err);
         let msg = "Failed to update project.";
         // Prefer server msg if available
         if (err?.response?.data?.error) msg = err.response.data.error;

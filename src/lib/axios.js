@@ -23,7 +23,7 @@ api.interceptors.response.use(
   (error) => {
     // You can handle global errors here (401, 403, etc.)
     if (error.response && error.response.status === 401) {
-      console.warn("Unauthorized! Redirect to login.");
+      console.warn("Unauthorized!");
     }
     return Promise.reject(error);
   }

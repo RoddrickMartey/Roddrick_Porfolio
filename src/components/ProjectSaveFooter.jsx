@@ -69,20 +69,12 @@ export default function ProjectSaveFooter({
       // Validate using our helper
       const checked = validateProjectForm(payload);
       if (!checked.ok) {
-        console.group("Project validation errors");
-        console.error(checked.errors);
-        console.groupEnd();
-
         const errs = checked.errors.map((er) => er.msg).join("\n");
         toast.error("Validation failed", {
           description: errs || "Check required fields.",
         });
         return;
       }
-
-      console.group("Validated project payload");
-      console.log(checked.data);
-      console.groupEnd();
 
       try {
         setLoading(true);
@@ -93,7 +85,6 @@ export default function ProjectSaveFooter({
         });
         navigate("/admin/projects");
       } catch (err) {
-        console.error("Save project error:", err);
         let msg = "Failed to save project.";
         if (err?.response?.data?.error) msg = err.response.data.error;
         toast.error("Save failed", { description: msg });

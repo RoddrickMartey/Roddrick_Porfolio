@@ -5,7 +5,6 @@ import React from "react";
 
 function AboutPage() {
   const { data } = useUserDetailsStore();
-  console.log(data);
 
   return (
     <section className="flex flex-col min-h-screen gap-10 p-6 pt-28 md:p-20">

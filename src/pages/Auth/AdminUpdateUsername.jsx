@@ -37,14 +37,13 @@ function AdminUpdateUsername() {
 
     try {
       setLoading(true);
-      const res = await updateUsername(formData);
+      await updateUsername(formData);
       toast("Updated Succefully");
       setFormData({
         username: "",
         resetSecret: "",
         newUsername: "",
       });
-      console.log(res);
     } catch (err) {
       console.error(err);
 

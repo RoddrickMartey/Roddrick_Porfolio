@@ -40,8 +40,6 @@ export function UserDetailsFooterControls({
       return;
     }
 
-    console.log("Validated user details:", res.data);
-
     setLoading(true);
     const date = new Date();
     try {
