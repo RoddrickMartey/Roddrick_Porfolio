@@ -25,6 +25,7 @@ export const store = configureStore({
     getDefault({
       serializableCheck: false, // redux-persist compat
     }),
+  devTools: import.meta.env.MODE !== "production",
 });
 
 export const persistor = persistStore(store);
