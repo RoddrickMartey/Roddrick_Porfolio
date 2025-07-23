@@ -12,7 +12,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate } from "react-router";
-import { User, KeyRound, FileEdit, PlusSquare } from "lucide-react";
+import { User, KeyRound, FileEdit, PlusSquare, Logs } from "lucide-react";
 import ThemeToggle from "./DarkModeButton";
 
 function AppSidebar() {
@@ -95,6 +95,22 @@ function AppSidebar() {
                 >
                   <PlusSquare className="w-4 h-4" />
                   <span>Add Project</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Logs</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  onClick={() => navigate("/admin/logs")}
+                  className="gap-2"
+                >
+                  <Logs className="w-4 h-4" />
+                  <span>Logs</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>

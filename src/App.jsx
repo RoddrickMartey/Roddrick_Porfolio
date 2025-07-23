@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import ProjectPage from "./pages/ProjectPage";
+import AdminLogs from "./pages/Auth/AdminLogs";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           path="/admin/edit-project/:slug"
           element={<AdminEditProject />}
         />
+        <Route path="/admin/logs" element={<AdminLogs />} />
       </Route>
       <Route element={<PublicLayout />}>
         <Route path="/" element={<HomePage />} />

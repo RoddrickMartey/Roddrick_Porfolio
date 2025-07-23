@@ -8,12 +8,13 @@ import {
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
+import NotFound from "@/pages/NotFound";
 
 export default function ProtectedLayout() {
   const { isAuthenticated, logout } = useAuth();
 
   if (!isAuthenticated) {
-    return <Navigate to="/" replace />;
+    return <NotFound />;
   }
 
   return (
